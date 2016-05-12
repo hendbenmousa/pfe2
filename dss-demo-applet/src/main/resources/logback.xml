@@ -1,0 +1,40 @@
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type
+			 ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>TRACE</level>
+		</filter>
+		<encoder>
+			<pattern>%-5level %F:%L [%thread] - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<!--<appender name="debug" class="ch.qos.logback.core.FileAppender">-->
+		<!--<file>/dss-debug.log</file>-->
+		<!--&lt;!&ndash; rewrite file each time &ndash;&gt;-->
+		<!--<append>false</append>-->
+		<!--&lt;!&ndash; encoders are assigned the type-->
+			 <!--ch.qos.logback.classic.encoder.PatternLayoutEncoder by default &ndash;&gt;-->
+		<!--<encoder>-->
+			<!--<pattern>%-5level %F:%L [%thread] - %msg %n</pattern>-->
+		<!--</encoder>-->
+	<!--</appender>-->
+
+	<!--<logger name="eu.europa" level="DEBUG">-->
+	<!--<appender-ref ref="STDOUT"/>-->
+	<!--</logger>-->
+	<logger name="org.apache.http" level="WARN"/>
+	<!--<logger name="org.apache.xml.security.utils.DigesterOutputStream" level="INFO"/>-->
+	<logger name="org.apache.pdfbox.pdfparser.PDFObjectStreamParser" level="INFO"/>
+
+	<logger name="eu.europa.ec.markt.dss.validation102853.tsl.PointerToOtherTSL" level="INFO"/>
+
+
+	<root level="TRACE">
+		<appender-ref ref="STDOUT"/>
+		<!--<appender-ref ref="debug"/>-->
+	</root>
+
+</configuration>
